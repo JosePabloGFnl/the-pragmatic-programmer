@@ -1,0 +1,11 @@
+Feature: Scoring
+
+Background:
+    Given an empty scorecard
+
+Scenario: bowling a lot of 3s
+    Given I throw a 3
+    And I throw a 3
+    And I throw a 3
+    And I throw a 3
+    Then the score should be 12
