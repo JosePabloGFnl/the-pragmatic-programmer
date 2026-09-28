@@ -1,3 +1,5 @@
+require_relative "exercise_4_parser"
+
 describe TurtleParser do
   it "a command with a number" do
     program = <<~TURTLE
