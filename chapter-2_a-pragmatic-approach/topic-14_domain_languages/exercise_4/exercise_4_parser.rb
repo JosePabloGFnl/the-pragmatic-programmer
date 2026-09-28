@@ -8,6 +8,7 @@ class TurtleParser
     # Remove blank and comment-only lines.
     program = program.split(" # ")
     # Loop over the remaining lines.
+    program = program.reject { |line| line.start_with?("#") || line.empty? }
     # Split each line at # and keep the first piece.
     # Split that at the space.
     # Take the letter from position 0.
