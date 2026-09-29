@@ -15,7 +15,7 @@ class TurtleParser
         program = program.split("\n")
 
         # Remove blank and comment-only lines.
-        program = program.reject { |line| line.start_with?("#") || line.empty? }
+        program = program.reject { |line| line.strip.start_with?("#") || line.strip.empty? }
 
         # Loop over the remaining lines.
         program.map do |line|
@@ -41,7 +41,7 @@ class TurtleParser
             end
             # If there's a number, convert it; otherwise nil.
             if has_number
-                number = command_pieces[1].to_i
+                number = Integer(command_pieces[1], 10)
             else
                 number = nil
             end
