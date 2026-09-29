@@ -47,6 +47,7 @@ class TurtleParser
             end
             # Put letter and number into a hash.
             # Collect all the hashes into an array, in order.
+            {"letter" => command_letter, "number" => number}
         end
     end
 end
