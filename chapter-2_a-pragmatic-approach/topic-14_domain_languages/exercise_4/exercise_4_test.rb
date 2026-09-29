@@ -13,6 +13,6 @@ describe TurtleParser do
     TURTLE
 
     result = TurtleParser.new
-    expect(result.instructions("W 2")).to eq({"letter" => "W", "number" => 2})
+    expect(result.instructions("W 2")).to eq([{"letter" => "W", "number" => 2}])
   end
 end
