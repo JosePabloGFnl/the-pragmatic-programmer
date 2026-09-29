@@ -31,9 +31,14 @@ class TurtleParser
 
             # Check the letter is in the command hash; if not, stop with an error.
             unless COMMANDS.key?(command_letter)
-            raise "Unknown command: #{command_letter}"
+                raise "Unknown command: #{command_letter}"
             end
             # Check the number against the hash's boolean; if they don't match, stop with an error.
+            expects_number = COMMANDS[command_letter]
+            has_number = !command_pieces[1].nil?
+            if expects_number != has_number
+                raise "Wrong argument for: #{command_letter}"
+            end
             # If there's a number, convert it; otherwise nil.
             # Put letter and number into a hash.
             # Collect all the hashes into an array, in order.
