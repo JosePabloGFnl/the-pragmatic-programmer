@@ -40,6 +40,11 @@ class TurtleParser
                 raise "Wrong argument for: #{command_letter}"
             end
             # If there's a number, convert it; otherwise nil.
+            if has_number
+                number = command_pieces[1].to_i
+            else
+                number = nil
+            end
             # Put letter and number into a hash.
             # Collect all the hashes into an array, in order.
         end
